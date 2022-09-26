@@ -41,35 +41,63 @@ end
 
 ## Exercises
 
-Write tests for the following methods
+Write tests for the following classes
 
 ```
-# File: lib/greet.rb
+# File: lib/counter.rb
 
-def greet(name)
-  return "Hello, #{name}!"
-end
-```
+class Counter
+  def initialize
+    @count = 0
+  end
 
-```
-# File: lib/check_codeword.rb
+  def add(num)
+    @count += num
+  end
 
-def check_codeword(codeword)
-  if codeword == "horse"
-	return "Correct! Come in."
-  elsif codeword.chars.first == "h" && codeword.chars.last == "e"
-	return "Close, but nope."
-  else
-	return "WRONG!"
+  def report
+    return "Counted to #{@count} so far."
   end
 end
 ```
 
 ```
-# File: lib/report_length.rb
+# File: lib/string_builder.rb
 
-def report_length(str)
-  length = str.length
-  return "This string was #{length} characters long."
+class StringBuilder
+  def initialize
+    @str = ""
+  end
+
+  def add(str)
+    @str += str
+  end
+
+  def size
+    return @str.length
+  end
+
+  def output
+    return @str
+  end
+end
+```
+
+```
+# File: lib/gratitudes.rb
+
+class Gratitudes
+  def initialize
+    @gratitudes = []
+  end
+
+  def add(gratitude)
+    @gratitudes.push(gratitude)
+  end
+
+  def format
+    formatted = "Be grateful for: "
+    formatted += @gratitudes.join(", ")
+  end
 end
 ```
